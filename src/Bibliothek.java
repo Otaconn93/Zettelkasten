@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -16,6 +17,7 @@ public class Bibliothek {
                 "3-411-04013-0", "-"));
         zettelkasten.addMedium(new CD("\"1\"", "Apple (Bea (EMI)", "The Beatles"));
         zettelkasten.addMedium(new Zeitschrift("\"Der Spiegel\"", "0038-7452 ", 54, 6));
+        zettelkasten.addMedium(new ElektronischesMedium("\"Hochschule Stralsund\"", "https://www.hochschule-stralsund.de"));
         zettelkasten.addMedium(new ElektronischesMedium("\"Hochschule Stralsund\"", "https://www.hochschule-stralsund.de"));
         //Zettelkasten sortieren
         System.out.println("Wie soll die Liste sortiert werden? (A-Z) (Z-A)");
@@ -39,5 +41,25 @@ public class Bibliothek {
         for (Medium medium : output) {
             System.out.println(medium.calculateRepresentation());
         }
+
+        //findmedium test
+        ArrayList<Medium> findm = zettelkasten.findMedium("Hochschule Stralsund");
+        for (Medium m : findm) {
+            System.out.println(m.calculateRepresentation());
+        }
+
+        //dropmedium test
+
+        try {
+            zettelkasten.dropMedium("Hochschule Stralsund", true);
+        }catch (DuplicateEntryException e){
+            System.out.println(e.getMessage());
+        }
+
+        findm = zettelkasten.findMedium("Hochschule Stralsund");
+        for (Medium m : findm) {
+            System.out.println(m.calculateRepresentation());
+        }
+
     }
 }
