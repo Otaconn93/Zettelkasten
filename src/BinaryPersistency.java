@@ -2,8 +2,8 @@ import java.io.*;
 
 public class BinaryPersistency implements Persistency {
 
-    @Override
-    public void save(Zettelkasten zk, String dateiname) {
+
+    public static void save(Zettelkasten zk, String dateiname) {
         try {
             FileOutputStream fos = new FileOutputStream(dateiname+".ser");
             ObjectOutputStream oos = new ObjectOutputStream(fos);

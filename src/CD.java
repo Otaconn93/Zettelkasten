@@ -1,11 +1,18 @@
 /**
  * Klasse CD
+ *
  * @author Shamil Gradov
  */
 public class CD extends Medium {
 
     private String label;
     private String Kuenstler;
+
+    public CD(String _titel, String _label, String _kuenstler) {
+        super(_titel);
+        setLabel(_label);
+        setKuenstler(_kuenstler);
+    }
 
     public String getLabel() {
         return label;
@@ -23,13 +30,9 @@ public class CD extends Medium {
         Kuenstler = kuenstler;
     }
 
-    public CD(String _titel, String _label, String _kuenstler) {
-        super(_titel);
-        setLabel(_label);
-        setKuenstler(_kuenstler);
-    }
     /**
      * Methode um Parameter der Klasse CD als Zeichenkette auszugeben
+     *
      * @return Ausgabe der Repraesentation des Mediums CD in Stringform
      */
     public String calculateRepresentation() {

@@ -4,7 +4,7 @@
  *
  * @author Shamil Gradov
  */
-public abstract class Medium implements Comparable{
+public abstract class Medium implements Comparable {
     private String titel;
 
     //Getter und Setter Methoden für die abstrakte Klasse Medium
@@ -37,8 +37,8 @@ public abstract class Medium implements Comparable{
         return sb.toString();
     }
 
-    public int compareTo(Object x){
-        Medium other = (Medium)x;
+    public int compareTo(Object x) {
+        Medium other = (Medium) x;
         return (this.titel.compareTo(other.titel));
     }
 }

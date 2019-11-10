@@ -2,32 +2,16 @@ import java.net.URL;
 
 /**
  * Klasse ElektronischesMedium
+ *
  * @author Shamil Gradov
  */
 public class ElektronischesMedium extends Medium {
 
     private String url;
 
-    public String getURL() {
-        return url;
-    }
-
-    /**
-     * Methode zum setzen der URL
-     * @param _url
-     */
-    public void setURL(String _url) {
-
-        if(checkURL(_url)){
-            url = _url;
-            System.out.println("gültige URL gesetzt");
-        }else {
-            System.out.println("ungültige url");
-        }
-    }
-
     /**
      * Konstruktor der Klasse ElektronischesMedium
+     *
      * @param _titel
      * @param _url
      */
@@ -35,8 +19,10 @@ public class ElektronischesMedium extends Medium {
         super(_titel);
         setURL(_url);
     }
+
     /**
-     *  Methode um zu prüfen ob die URL korrekt ist
+     * Methode um zu prüfen ob die URL korrekt ist
+     *
      * @param urlString
      * @return true wenn erfolgreich oder false wenn die URL nicht übereinstimmt
      */
@@ -49,8 +35,29 @@ public class ElektronischesMedium extends Medium {
             return false;
         }
     }
+
+    public String getURL() {
+        return url;
+    }
+
+    /**
+     * Methode zum setzen der URL
+     *
+     * @param _url
+     */
+    public void setURL(String _url) {
+
+        if (checkURL(_url)) {
+            url = _url;
+            System.out.println("gültige URL gesetzt");
+        } else {
+            System.out.println("ungültige url");
+        }
+    }
+
     /**
      * Methode um Parameter der Klasse ElektronischenMediums als Zeichenkette auszugeben
+     *
      * @return Ausgabe der Repraesentation des ElektronischenMediums in Stringform
      */
     public String calculateRepresentation() {

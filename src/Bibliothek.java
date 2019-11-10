@@ -2,8 +2,8 @@ import java.util.Scanner;
 
 /**
  * Klasse Bibliothek
- * @author Shamil Gradov
  *
+ * @author Shamil Gradov
  */
 public class Bibliothek {
 
@@ -24,9 +24,9 @@ public class Bibliothek {
         /*
          * Schleife zum ausgeben aller Inhalte des Zettelkastens
          */
-        for(Medium medium : zettelkasten){
+        for (Medium medium : zettelkasten) {
             System.out.println(medium.calculateRepresentation());
         }
-
+        HumanReadablePersistency.save(zettelkasten,"zettelkasten");
     }
 }

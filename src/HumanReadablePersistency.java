@@ -1,13 +1,22 @@
-public class HumanReadablePersistency implements Persistency{
+import java.io.*;
 
+public abstract class HumanReadablePersistency implements Persistency {
 
-    @Override
-    public void save(Zettelkasten zk, String dateiname) {
-
+    public static void save(Zettelkasten zk, String dateiname) {
+        try {
+            File file = new File(dateiname+".txt");
+            BufferedWriter bw = new BufferedWriter(new FileWriter(file));
+            for(Medium m : zk){
+                bw.write(m.calculateRepresentation()+System.lineSeparator());
+            }
+            bw.close();
+        } catch (IOException e) {
+            System.out.println("File konnte nicht geschrieben werden");
+        }
     }
 
     @Override
-    public Zettelkasten load(String dateiname) {
-        return null;
+    public Zettelkasten load(String dateiname) throws NoSuchMethodException {
+        throw new NoSuchMethodException("Methode nicht implementiert");
     }
 }

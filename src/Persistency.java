@@ -1,4 +1,8 @@
 interface Persistency {
-    void save(Zettelkasten zk, String dateiname);
-    Zettelkasten load(String dateiname);
+
+    static void save(Zettelkasten zk, String dateiname) {
+
+    }
+
+    Zettelkasten load(String dateiname) throws NoSuchMethodException;
 }
