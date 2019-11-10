@@ -1,7 +1,8 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
-public class Zettelkasten {
+public class Zettelkasten implements Iterable<Medium> {
 
     private ArrayList<Medium> myZettelkasten = new ArrayList<Medium>();
     private boolean sortiert = false;
@@ -35,5 +36,10 @@ public class Zettelkasten {
             //Wie sortier ich den bumms
             sortiert=true;
         }
+    }
+
+    @Override
+    public Iterator<Medium> iterator() {
+        return myZettelkasten.listIterator();
     }
 }
