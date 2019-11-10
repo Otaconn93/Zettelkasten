@@ -1,8 +1,11 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Zettelkasten {
+
     private ArrayList<Medium> myZettelkasten = new ArrayList<Medium>();
     private boolean sortiert = false;
+    private Scanner sc = new Scanner(System.in);
 
     public void addMedium(Medium medium){
         myZettelkasten.add(medium);
