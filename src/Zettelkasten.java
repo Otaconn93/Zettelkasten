@@ -1,12 +1,9 @@
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Scanner;
+import java.util.*;
 
 public class Zettelkasten implements Iterable<Medium> {
 
     private ArrayList<Medium> myZettelkasten = new ArrayList<Medium>();
     private boolean sortiert = false;
-    private Scanner sc = new Scanner(System.in);
 
     public void addMedium(Medium medium){
         myZettelkasten.add(medium);
@@ -16,6 +13,7 @@ public class Zettelkasten implements Iterable<Medium> {
         for (Medium m: myZettelkasten) {
             if(m.getTitel().contains(parameter)){
                 myZettelkasten.remove(m);
+                sortiert=false;
                 break;
             }
         }
@@ -29,12 +27,19 @@ public class Zettelkasten implements Iterable<Medium> {
         return null;
     }
 
-    public void sort(){
+    public void sort(String parameter){
         if(sortiert==true){
             System.out.println("Ist bereits sortiert");
         }else{
-            //Wie sortier ich den bumms
-            sortiert=true;
+            if(parameter.equals("A-Z")) {
+                Collections.sort(myZettelkasten, (a, z) -> a.getTitel().compareTo(z.getTitel()));
+                sortiert=true;
+            }else if(parameter.equals("Z-A")) {
+                Collections.sort(myZettelkasten, (a,z) -> z.getTitel().compareTo(a.getTitel()));
+                sortiert = true;
+            }else{
+                System.out.println("Keine gültige Sortiermethode eingegeben. Zettelkasten wurde nicht sortiert");
+            }
         }
     }
 
