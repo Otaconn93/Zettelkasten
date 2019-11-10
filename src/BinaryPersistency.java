@@ -1,5 +1,7 @@
 import java.io.*;
-
+/**
+ * @author Shamil Gradov
+ */
 public class BinaryPersistency implements Persistency {
 
 

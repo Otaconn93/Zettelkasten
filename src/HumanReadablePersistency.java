@@ -1,5 +1,7 @@
 import java.io.*;
-
+/**
+ * @author Shamil Gradov
+ */
 public abstract class HumanReadablePersistency implements Persistency {
 
     public static void save(Zettelkasten zk, String dateiname) {

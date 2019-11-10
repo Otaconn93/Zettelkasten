@@ -1,3 +1,6 @@
+/**
+ * @author Shamil Gradov
+ */
 public class DuplicateEntryException extends Exception{
 
     public DuplicateEntryException(){

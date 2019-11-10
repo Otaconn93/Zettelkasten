@@ -1,6 +1,9 @@
 import java.io.Serializable;
 import java.util.*;
 
+/**
+ * @author Shamil Gradov
+ */
 public class Zettelkasten implements Iterable<Medium>, Serializable {
 
     private ArrayList<Medium> myZettelkasten = new ArrayList<Medium>();
@@ -37,6 +40,7 @@ public class Zettelkasten implements Iterable<Medium>, Serializable {
             }
         }
     }
+
 
     //nach einem Medium suchen
     public ArrayList<Medium> findMedium(String _titel) {

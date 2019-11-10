@@ -1,3 +1,6 @@
+/**
+ * @author Shamil Gradov
+ */
 interface Persistency {
 
     static void save(Zettelkasten zk, String dateiname) {
