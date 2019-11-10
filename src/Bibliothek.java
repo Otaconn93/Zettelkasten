@@ -27,6 +27,17 @@ public class Bibliothek {
         for (Medium medium : zettelkasten) {
             System.out.println(medium.calculateRepresentation());
         }
-        HumanReadablePersistency.save(zettelkasten,"zettelkasten");
+        //Datei erstellen HumanReadablePersistency test
+        System.out.println("Wie ist der Name der zu speichernden Datei?");
+        HumanReadablePersistency.save(zettelkasten, sc.nextLine());
+
+        //BinaryPersistency Testen
+        System.out.println("Wie lautet der name der zu speichernden Binary Datei");
+        BinaryPersistency.save(zettelkasten, sc.nextLine());
+        System.out.println("Welche Binary Datei soll geladen werden");
+        Zettelkasten output = BinaryPersistency.load(sc.nextLine());
+        for (Medium medium : output) {
+            System.out.println(medium.calculateRepresentation());
+        }
     }
 }

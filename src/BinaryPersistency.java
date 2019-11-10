@@ -5,18 +5,20 @@ public class BinaryPersistency implements Persistency {
 
     public static void save(Zettelkasten zk, String dateiname) {
         try {
-            FileOutputStream fos = new FileOutputStream(dateiname+".ser");
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(zk);
-            oos.close();
-            fos.close();
+
+            File file = new File(dateiname);
+            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(file));
+                oos.writeObject(zk);
+                oos.flush();
+                oos.close();
+
         }catch (IOException ioe){
             System.out.println("Datei konnte nicht erstellt werden");
         }
 
     }
-    @Override
-    public Zettelkasten load(String dateiname) {
+
+    public static Zettelkasten load(String dateiname) {
         try{
             FileInputStream fis = new FileInputStream(dateiname);
             ObjectInputStream ois = new ObjectInputStream(fis);

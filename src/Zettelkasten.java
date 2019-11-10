@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.util.*;
 
-public class Zettelkasten implements Iterable<Medium> {
+public class Zettelkasten implements Iterable<Medium>, Serializable {
 
     private ArrayList<Medium> myZettelkasten = new ArrayList<Medium>();
     private boolean sortiert = false;

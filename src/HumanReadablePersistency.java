@@ -15,8 +15,8 @@ public abstract class HumanReadablePersistency implements Persistency {
         }
     }
 
-    @Override
-    public Zettelkasten load(String dateiname) throws NoSuchMethodException {
+
+    public static Zettelkasten load(String dateiname) throws NoSuchMethodException {
         throw new NoSuchMethodException("Methode nicht implementiert");
     }
 }

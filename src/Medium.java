@@ -1,10 +1,12 @@
+import java.io.Serializable;
+
 /**
  * Abstrakte Klasse Medium
  * Veerbt das Feld Titel
  *
  * @author Shamil Gradov
  */
-public abstract class Medium implements Comparable {
+public abstract class Medium implements Comparable, Serializable {
     private String titel;
 
     //Getter und Setter Methoden für die abstrakte Klasse Medium

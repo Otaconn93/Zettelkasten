@@ -4,5 +4,7 @@ interface Persistency {
 
     }
 
-    Zettelkasten load(String dateiname) throws NoSuchMethodException;
+    static Zettelkasten load(String dateiname) throws NoSuchMethodException {
+        return null;
+    }
 }
